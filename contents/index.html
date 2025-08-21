@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Deepayan Banik</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="239886db-86d1-801d-93e0-e171a5631a4a" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_3.jpg" style="object-position:center 11.629999999999995%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/aquarius_red.svg"/></div><h1 class="page-title">Deepayan Banik</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="23a886db-86d1-80dd-9654-fcbcddb39a68"><div style="width:100%"><div id="23a886db-86d1-8033-9249-fe56dec5f596" class="column-list"><div id="23a886db-86d1-80b3-8bee-c97205e057eb" style="width:56.25%" class="column"><h2 id="24b886db-86d1-8035-9ede-c4127aade607" class=""><mark class="highlight-default"><mark class="highlight-default_background">I am a 4th year PhD scholar in </mark></mark><mark class="highlight-yellow"><mark class="highlight-default_background">Physics</mark></mark><mark class="highlight-gray"><mark class="highlight-default_background"> </mark></mark><mark class="highlight-default"><mark class="highlight-default_background">at the </mark></mark><mark class="highlight-blue"><mark class="highlight-default_background">University of Toronto</mark></mark><mark class="highlight-default"><mark class="highlight-default_background">.<br/><br/>My main interest is </mark></mark><mark class="highlight-red">geophysical and astrophysical fluid dynamics</mark><mark class="highlight-default"><mark class="highlight-default_background">. I study </mark></mark><mark class="highlight-gray"><mark class="highlight-default_background">planetary to stellar</mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> scale flows using primarily </mark></mark><mark class="highlight-teal"><mark class="highlight-default_background">theoretical and computational</mark></mark><mark class="highlight-gray"><mark class="highlight-default_background">, </mark></mark><mark class="highlight-default"><mark class="highlight-default_background">and occasionally</mark></mark><mark class="highlight-gray"><mark class="highlight-default_background">  observational</mark></mark><mark class="highlight-default"><mark class="highlight-default_background"> tools.  </mark></mark></h2></div><div id="23a886db-86d1-80d1-9706-f7e54c6b42eb" style="width:43.74999999999999%" class="column"><figure id="239886db-86d1-806f-9e9d-c3803211b4fe" class="image"><a href="Deepayan%20Banik%20239886db86d1801d93e0e171a5631a4a/737a1b29-c487-4521-840a-fd06f0834a80.png"><img style="width:320.28193832599123px" src="Deepayan%20Banik%20239886db86d1801d93e0e171a5631a4a/737a1b29-c487-4521-840a-fd06f0834a80.png"/></a></figure></div></div></div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="23b886db-86d1-80e0-9a38-c232acc6767a"><div style="width:100%"><div id="23b886db-86d1-80d4-8d28-faca9397e0de" class="column-list"><div id="23b886db-86d1-80c5-a54f-c308999daaa2" style="width:25%" class="column"></div><div id="23b886db-86d1-8096-a5f8-c9f72aa00214" style="width:46.875%" class="column"></div><div id="23e886db-86d1-80f6-9fb7-ed323a65a40b" style="width:31.250000000000007%" class="column"></div><div id="23e886db-86d1-80f2-a8f6-d0d44372b8d4" style="width:34.37499999999998%" class="column"></div></div></div></figure><h1 id="239886db-86d1-80b8-93e6-d10f902a8263" class="block-color-default">Research</h1><blockquote id="62f3a18d-ac4d-4bf6-8a7e-ba3acfc972d7" class=""><strong>Navigating through engineering and physics educational backgrounds, interdisciplinarity lies at the core of my research. In general, am interested in mathematical modeling of natural phenomena. However, in the past couple of years my work has revolved around the mechanics of planetary and stellar scale astrophysical phenomena.</strong></blockquote><figure class="callout" style="white-space:pre-wrap;display:flex" id="23a886db-86d1-8037-85e2-fcc69683fce3"><div style="width:100%"><div id="131886db-86d1-80df-930c-d00572f7771e" class="collection-content"><h4 class="collection-title">All pages</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Name</th><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Tags</th><th><span class="icon property-icon"><div data-testid="/icons/calendar_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/calendar_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/calendar_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Published Date</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Summary</th></tr></thead><tbody><tr id="32d2b215-a825-468b-9337-48e9f74cba3f"><td class="cell-title"><a href="https://www.notion.so/Stars-32d2b215a825468b933748e9f74cba3f?pvs=21"><img class="icon" src="https://www.notion.so/icons/science_blue.svg"/>Stars</a></td><td class="cell-n`ql"><span class="selected-value select-value-color-purple">Research</span></td><td class="cell-f6305b9b-e91c-4edc-bcbf-8bec258b654a"></td><td class="cell-wgwq">Differential rotation and meridional circulation in stellar interiors are often neglected in evolutionary models that treat stars as rigidly-rotating one dimensional objects. However, in reality they highly three dimensional with complex fluid motion that not only affect the current state of stars but also their past and future. I work on this using theoretical and computational fluid dynamics.</td></tr><tr id="1be5c125-2f88-49d8-8973-7df85b4178d7"><td class="cell-title"><a href="https://www.notion.so/Planets-1be5c1252f8849d889737df85b4178d7?pvs=21"><img class="icon" src="https://www.notion.so/icons/science_blue.svg"/>Planets</a></td><td class="cell-n`ql"><span class="selected-value select-value-color-purple">Research</span></td><td class="cell-f6305b9b-e91c-4edc-bcbf-8bec258b654a"></td><td class="cell-wgwq">Exoplanetary climate physics is focused on using a variety of tools. I use shallow water models of planetary atmospheres to study variably irradiated synchronous and asynchronous planets.  I also collaborate on using high resolution phase resolved spectroscopy to probe ultra hot Jupiters for magnetic fields.</td></tr><tr id="5161e6f9-3e3c-4192-85b2-955ed0ca3e49"><td class="cell-title"><a href="https://www.notion.so/Asteroids-5161e6f93e3c419285b2955ed0ca3e49?pvs=21"><img class="icon" src="https://www.notion.so/icons/science_blue.svg"/>Asteroids</a></td><td class="cell-n`ql"><span class="selected-value select-value-color-purple">Research</span></td><td class="cell-f6305b9b-e91c-4edc-bcbf-8bec258b654a"></td><td class="cell-wgwq">In the past, I have studied the spin and shape evolution of rubble-pile asteroids using discrete and continuum methods for granular flows with focus on top-shaped asteroids like Bennu and Ryugu. Current collaborative work extends into developing a comprehensive asteroid evolution history package for population statistics.</td></tr><tr id="12f886db-86d1-808f-ac17-fa10eb53f9ee"><td class="cell-title"><a href="https://www.notion.so/Miscellaneous-12f886db86d1808fac17fa10eb53f9ee?pvs=21"><img class="icon" src="https://www.notion.so/icons/science_blue.svg"/>Miscellaneous</a></td><td class="cell-n`ql"><span class="selected-value select-value-color-purple">Research</span></td><td class="cell-f6305b9b-e91c-4edc-bcbf-8bec258b654a"></td><td class="cell-wgwq">Some of my old work dealt with the theoretical design of mechanical logic gates like the OR gate, using compliant bistable arches and their macroscale prototyping as a proof of concept for eventual miniaturization. I have also worked on designing tests for LLM evaluation in the field of physics.</td></tr></tbody></table><br/><br/></div><p id="23a886db-86d1-804d-b554-fe10dd0f772b" class="">
+</p></div></figure><h1 id="239886db-86d1-8013-9d04-c5ded10ee87d" class="block-color-default">Projects</h1><blockquote id="24b886db-86d1-80ef-b0f0-f79b187c17e5" class="block-color-yellow"><strong>fluid mechanics, turbulence, magnetic fields, mixing, convection, stratification, shallow water, general circulation, primitive equations, wave mean-flow interactions</strong></blockquote><figure class="callout" style="white-space:pre-wrap;display:flex" id="23a886db-86d1-80f7-a11c-f89742fbaaab"><div style="width:100%"><h3 id="239886db-86d1-80f6-8241-ce628c178566" class=""><mark class="highlight-red">Current</mark></h3><p id="12f886db-86d1-80ca-9ec7-dabeff3cac4c" class="">Wave driven Hot-Jupiter variability. <br/>Atmospheric circulation of variably irradiated synchronous and asynchronous planets. <br/>Exoplanet magnetic fields using high-resolution phase-resolved cross-correlation spectroscopy.<br/>Fundamental origins of the diffusion tensor.</p><h3 id="13a886db-86d1-80ce-bfdf-db689297f58c" class=""><mark class="highlight-blue">Recent </mark></h3><p id="12f886db-86d1-80b2-ad3b-e5ae35005b32" class="">Beating climates of variably irradiated asynchronous exoplanets. <br/>Rotational mixing in stellar and planetary interiors.<br/>Meridional circulation in stratified environments. </p><h3 id="239886db-86d1-80b2-ba50-c97f1600d28e" class=""><mark class="highlight-teal">Past</mark></h3><p id="239886db-86d1-808a-841c-ef4a1ef602bc" class="">Spin and shape evolution of rubble-piles.<br/>Continuum regolith flows on top-shaped asteroids.<br/>Discrete granular flow on a rotating and gravitating ellipse.<br/>Mechanical logic gates.</p></div></figure><h1 id="ba1100ee-9fe2-47df-9b81-c5ecae932afc" class="block-color-default">Publications</h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="23a886db-86d1-80b0-ba2a-d1c0c3634d73"><div style="width:100%"><div id="133886db-86d1-8053-bf16-ee80250f6f6a" class="collection-content"><h4 class="collection-title">Publications</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/rename_gray.svg" style="width:14px;height:14px;display:block"/></span>Title</th><th><span class="icon property-icon"><div data-testid="/icons/description_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/description_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/description_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>Authors</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/gradebook_gray.svg" style="width:14px;height:14px;display:block"/></span>Journal</th></tr></thead><tbody><tr id="239886db-86d1-8022-9032-dfc2dcccbe54"><td class="cell-title"><a href="https://www.notion.so/Meridional-circulation-molecular-weighted-239886db86d180229032dfc2dcccbe54?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Meridional circulation molecular-weighted</a></td><td class="cell-fY^F">D Banik, K Menou, E H Anders</td><td class="cell-Fi_|">The Astrophsyical Journal (2025)</td></tr><tr id="239886db-86d1-809c-a4d0-e728a3baee64"><td class="cell-title"><a href="https://www.notion.so/Planetary-Rhythms-Synchronous-Circulation-on-Variably-Irradiated-Asynchronous-Planets-239886db86d1809ca4d0e728a3baee64?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Planetary Rhythms: Synchronous Circulation on Variably Irradiated Asynchronous Planets</a></td><td class="cell-fY^F">D Banik (solo author)</td><td class="cell-Fi_|">The Astrophysical Journal (2025)</td></tr><tr id="133886db-86d1-80f0-a4d0-f440bc1630c3"><td class="cell-title"><a href="https://www.notion.so/Meridional-circulation-streamlined-133886db86d180f0a4d0f440bc1630c3?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Meridional circulation streamlined</a></td><td class="cell-fY^F"><mark class="highlight-default">D Banik, K Menou</mark></td><td class="cell-Fi_|"><em>Geophysical and Astrophysical Fluid Dynamics (2024)</em></td></tr><tr id="1ce3139f-b507-4cfc-9ffe-ec35034b1966"><td class="cell-title"><a href="https://www.notion.so/Regolith-flow-on-top-shaped-asteroids-1ce3139fb5074cfc9ffeec35034b1966?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Regolith flow on top-shaped asteroids</a></td><td class="cell-fY^F"><mark class="highlight-default">D Banik, K Gaurav, I Sharma</mark></td><td class="cell-Fi_|"><em>Proceedings of the Royal Society A (2022)</em></td></tr><tr id="d497c055-ea1f-4ad0-b4b6-fda1e7646561"><td class="cell-title"><a href="https://www.notion.so/Spin-change-of-rubble-piles-due-to-mass-shedding-culminating-from-surface-motion-d497c055ea1f4ad0b4b6fda1e7646561?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Spin change of rubble-piles due to mass shedding culminating from surface motion</a></td><td class="cell-fY^F"><mark class="highlight-default">D Banik, K Gaurav</mark></td><td class="cell-Fi_|"><em>Lunar and Planetary Science Conference (2021)</em></td></tr><tr id="049b2a5f-3832-4da4-86d5-62de0319e400"><td class="cell-title"><a href="https://www.notion.so/Granular-flow-on-a-rotating-and-gravitating-elliptical-body-049b2a5f38324da486d562de0319e400?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Granular flow on a rotating and gravitating elliptical body</a></td><td class="cell-fY^F"><mark class="highlight-default">K Gaurav, D Banik, I Sharma</mark></td><td class="cell-Fi_|"><em>Journal of Fluid Mechanics (2021)</em></td></tr><tr id="133886db-86d1-803e-a65d-e6cb733480c2"><td class="cell-title"><a href="https://www.notion.so/A-Mechanical-OR-Gate-Using-Pinned-Pinned-Bistable-Arches-133886db86d1803ea65de6cb733480c2?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>A Mechanical OR Gate Using Pinned-Pinned Bistable Arches</a></td><td class="cell-fY^F"><mark class="highlight-default">D Banik, S Palathingal, G Ananthasuresh, A Ghosh</mark></td><td class="cell-Fi_|"><em>Mechanism and Machine Science (2020)</em></td></tr><tr id="239886db-86d1-80d8-a72b-c816ae1b6ecc"><td class="cell-title"><a href="https://www.notion.so/Humanities-Last-Exam-239886db86d180d8a72bc816ae1b6ecc?pvs=21"><img class="icon" src="https://www.notion.so/icons/document_blue.svg"/>Humanities Last Exam</a></td><td class="cell-fY^F">Several authors including D Banik</td><td class="cell-Fi_|">arxiv (2025)</td></tr></tbody></table><br/><br/></div></div></figure><h1 id="24b886db-86d1-804c-afc1-d640daf1f705" class="">Miscellaneous</h1><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="24b886db-86d1-8059-928e-cc6bf9fba093"><div style="width:100%"><div id="24b886db-86d1-80fd-9727-fce955880daa" class="column-list"><div id="24b886db-86d1-80f8-9abd-cad0e84488c6" style="width:112.5%" class="column"><figure id="23a886db-86d1-80eb-a3aa-fce7383f0beb" class="link-to-page"><a href="https://www.notion.so/Blog-23a886db86d180eba3aafce7383f0beb?pvs=21"><span class="icon">✍🏽</span>Blog</a></figure><figure id="23a886db-86d1-8077-ba59-e52095b0f1ca" class="block-color-default link-to-page"><a href="https://www.notion.so/Advisors-collaborators-23a886db86d18077ba59e52095b0f1ca?pvs=21"><span class="icon">💥</span>Advisors / collaborators </a></figure></div><div id="24b886db-86d1-8019-b69b-c50a99d7970a" style="width:87.49999999999999%" class="column"><figure id="130886db-86d1-80a5-a908-f4d20baf0d51" class="link-to-page"><a href="https://www.notion.so/Database-130886db86d180a5a908f4d20baf0d51?pvs=21"><span class="icon">💽</span>Database</a></figure><figure id="24b886db-86d1-8020-9b5a-eb42ad5e0e5c" class="link-to-page"><a href="https://www.notion.so/GitHub-24b886db86d180209b5aeb42ad5e0e5c?pvs=21"><span class="icon">💻</span>GitHub</a></figure></div></div></div></figure><p id="24b886db-86d1-801e-bfcb-d1606d8cc8c4" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
